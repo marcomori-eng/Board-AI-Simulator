@@ -12,6 +12,18 @@ from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 import yaml
+import math
+import sys
+
+try:
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import numpy as np
+except ImportError:
+    print("Warning: matplotlib/pandas not found. Graphs will not be generated.")
+    plt = None
+    pd = None
+    np = None
 
 # Importa i componenti dinamici
 from simulator.engine.dynamic_engine import DynamicGameEngine
@@ -50,21 +62,29 @@ class KPIAnalyzer:
         # Scoring stats
         p1_scores = [r.get('p1_score', 0) for r in results]
         p2_scores = [r.get('p2_score', 0) for r in results]
+        score_diffs = [s1 - s2 for s1, s2 in zip(p1_scores, p2_scores)]
         
         scoring = {
-            "p1_avg_score": statistics.mean(p1_scores),
-            "p2_avg_score": statistics.mean(p2_scores),
-            "avg_diff": statistics.mean([abs(s1 - s2) for s1, s2 in zip(p1_scores, p2_scores)])
+            "p1_avg_score": statistics.mean(p1_scores) if p1_scores else 0,
+            "p2_avg_score": statistics.mean(p2_scores) if p2_scores else 0,
+            "avg_diff": statistics.mean([abs(d) for d in score_diffs]) if score_diffs else 0,
+            "max_p1_score": max(p1_scores) if p1_scores else 0,
+            "max_p2_score": max(p2_scores) if p2_scores else 0,
+            "std_dev_diff": statistics.stdev(score_diffs) if len(score_diffs) > 1 else 0
         }
+
+        # Advanced Stats (Luck, Phases, etc.)
+        advanced = KPIAnalyzer._analyze_advanced(results)
         
         return {
             "balance": balance,
             "scoring": scoring,
             "snowball": snowball_stats,
             "comebacks": comeback_stats,
+            "advanced": advanced,
             "performance": {
                 "total_duration_sec": duration_sec,
-                "avg_game_ms": (duration_sec * 1000) / num_games
+                "avg_game_ms": (duration_sec * 1000) / num_games if num_games > 0 else 0
             }
         }
     
@@ -132,6 +152,82 @@ class KPIAnalyzer:
             "comeback_rate": comebacks / valid_games if valid_games > 0 else 0.0
         }
 
+    @staticmethod
+    def _analyze_advanced(results: List[Dict]) -> Dict[str, Any]:
+        # Luck Analysis (Initial Hand Strength)
+        luck_valid = 0
+        stronger_wins = 0
+        strength_diffs = []
+        win_diff_corr = 0
+        
+        phase_wins = {'early': {'p1': 0, 'p2': 0}, 'mid': {'p1': 0, 'p2': 0}, 'late': {'p1': 0, 'p2': 0}}
+        volatility_scores = []
+
+        for r in results:
+            # Luck
+            if 'p1_initial_str' in r and 'p2_initial_str' in r:
+                luck_valid += 1
+                s1, s2 = r['p1_initial_str'], r['p2_initial_str']
+                winner = r.get('winner')
+                
+                if s1 > s2 and winner == 'player1': stronger_wins += 1
+                elif s2 > s1 and winner == 'player2': stronger_wins += 1
+                
+                strength_diffs.append(s1 - s2)
+            
+            # Phases & Volatility
+            history = r.get('score_history', [])
+            if len(history) >= 3:
+                # Phases
+                n = len(history)
+                # Ensure indices are within bounds
+                early_idx = min(n // 3, n - 1)
+                mid_idx = min(2 * n // 3, n - 1)
+                
+                early = history[early_idx]
+                mid = history[mid_idx]
+                late = history[-1]
+                
+                if early.get('player1',0) > early.get('player2',0): phase_wins['early']['p1'] += 1
+                elif early.get('player2',0) > early.get('player1',0): phase_wins['early']['p2'] += 1
+                
+                if mid.get('player1',0) > mid.get('player2',0): phase_wins['mid']['p1'] += 1
+                elif mid.get('player2',0) > mid.get('player1',0): phase_wins['mid']['p2'] += 1
+                
+                if late.get('player1',0) > late.get('player2',0): phase_wins['late']['p1'] += 1
+                elif late.get('player2',0) > late.get('player1',0): phase_wins['late']['p2'] += 1
+                
+                # Volatility: Avg change in score difference
+                diffs = [h.get('player1',0) - h.get('player2',0) for h in history]
+                if len(diffs) > 1:
+                    changes = [abs(diffs[i] - diffs[i-1]) for i in range(1, len(diffs))]
+                    if changes:
+                        volatility_scores.append(statistics.mean(changes))
+
+        # Correlation (simple approximation)
+        correlation = 0
+        if luck_valid > 5 and np is not None:
+             # Calculate correlation of initial strength diff vs final score diff
+             final_score_diffs = []
+             valid_strength_diffs = []
+             for i, r in enumerate(results):
+                 if 'p1_initial_str' in r:
+                     final_score_diffs.append(r['p1_score'] - r['p2_score'])
+                     valid_strength_diffs.append(strength_diffs[len(final_score_diffs)-1])
+             
+             if len(set(valid_strength_diffs)) > 1 and len(set(final_score_diffs)) > 1:
+                correlation = np.corrcoef(valid_strength_diffs, final_score_diffs)[0, 1]
+                if np.isnan(correlation): correlation = 0
+
+        return {
+            "luck_factor": {
+                "stronger_hand_win_rate": stronger_wins / luck_valid if luck_valid > 0 else 0,
+                "correlation_strength_score": correlation
+            },
+            "phases": phase_wins,
+            "avg_volatility": statistics.mean(volatility_scores) if volatility_scores else 0
+        }
+
 
 def run_batch_dynamic(
     rules_path: Path,
@@ -172,8 +268,19 @@ def run_batch_dynamic(
     kpis = KPIAnalyzer.calculate(results, num_games, duration)
     _print_kpi_report(kpis, profile1, profile2, game_name)
     
-    if output_file:
-        _save_results(output_file, results, kpis, config, profile1, profile2)
+    plot_filename = None
+    if plt is not None and num_games > 0:
+        plot_filename = f"report_{game_name.lower().replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+        try:
+            _generate_graphs(results, kpis, profile1, profile2, game_name, plot_filename)
+        except Exception as e:
+            print(f"⚠️ Errore generazione grafici: {e}")
+            import traceback
+            traceback.print_exc()
+    
+    # Save JSON always
+    json_filename = output_file or f"results_{game_name.lower().replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    _save_results(json_filename, results, kpis, config, profile1, profile2, plot_filename)
 
 
 def _run_path_game_simulation(rules_path, profile1, profile2, num_games, seed, verbose) -> List[Dict]:
@@ -222,12 +329,15 @@ def _run_card_game_simulation(rules_path, profile1, profile2, num_games, seed, v
         
         state = engine.create_game(["player1", "player2"], seed=current_seed)
         
+        # Calculate Initial Hand Strength
+        p1_hand_str = sum(c.strength for c in state.player_hands["player1"])
+        p2_hand_str = sum(c.strength for c in state.player_hands["player2"])
+        
         while not state.is_game_over:
             p1_hand = state.player_hands["player1"]
             p2_hand = state.player_hands["player2"]
             current = state.current_player
             
-            # (Codice identico a prima per carte)
             if current == "player1":
                 card1 = p1.choose_card(p1_hand, state, None)
                 p2.observe_card(card1, played_by_opponent=True)
@@ -246,6 +356,8 @@ def _run_card_game_simulation(rules_path, profile1, profile2, num_games, seed, v
             "winner": state.winner,
             "p1_score": state.player_scores["player1"],
             "p2_score": state.player_scores["player2"],
+            "p1_initial_str": p1_hand_str,
+            "p2_initial_str": p2_hand_str,
             "score_history": state.score_history
         })
         if (i+1)%100==0: print(f".. {i+1} games")
@@ -255,6 +367,7 @@ def _run_card_game_simulation(rules_path, profile1, profile2, num_games, seed, v
 
 def _run_board_game_simulation(rules_path, profile1, profile2, num_games, seed, verbose) -> List[Dict]:
     engine = StrategyEngine(rules_path)
+    # StrategyEngine might not be fully implemented in snippet, but assuming standard flow
     results = []
     
     for i in range(num_games):
@@ -271,7 +384,7 @@ def _run_board_game_simulation(rules_path, profile1, profile2, num_games, seed, 
             history.append({"player1": p1_terr, "player2": p2_terr})
             
             if verbose and i == 0:
-                print(f"Turno {state.turn_number}: {state.action_log[-1] if state.action_log else ''}") # Fix log access
+                print(f"Turno {state.turn_number}: {p1_terr}-{p2_terr}")
         
         winner = state.winner
         # Se finisce per limite turni
@@ -295,29 +408,157 @@ def _run_board_game_simulation(rules_path, profile1, profile2, num_games, seed, 
 def _print_kpi_report(kpis, p1, p2, game):
     bal = kpis['balance']
     snow = kpis['snowball']
+    adv = kpis['advanced']
+    scr = kpis['scoring']
     
-    print(f"\n📊 REPORT KPI: {game}")
-    print(f"{'='*50}")
-    print(f"BILANCIAMENTO:")
-    print(f"  P1 ({p1}) Win Rate: {bal['player1_win_rate']*100:.1f}%")
-    print(f"  P2 ({p2}) Win Rate: {bal['player2_win_rate']*100:.1f}%")
-    print(f"  First Mover Advantage: {bal['first_player_advantage']*100:+.1f}%")
-    print(f"  Balance Score: {bal['balance_score']*100:.1f}% (100% = perfetto)")
+    print(f"\n📊 DETAILED REPORT: {game}")
+    print(f"{'='*60}")
+    print(f"🏆 PERFORMANCE & BALANCE")
+    print(f"  P1 ({p1}) Win: {bal['player1_win_rate']*100:.1f}% | Avg Score: {scr['p1_avg_score']:.1f}")
+    print(f"  P2 ({p2}) Win: {bal['player2_win_rate']*100:.1f}% | Avg Score: {scr['p2_avg_score']:.1f}")
+    print(f"  Draws: {bal['draw_rate']*100:.1f}%")
+    print(f"  Balance Score: {bal['balance_score']*100:.1f}% (Ideal: 100%)")
     
-    print(f"\nDINAMICHE GIOCO:")
-    print(f"  Snowball Index: {snow['snowball_index']:+.2f} (Positivo = chi va in vantaggio vince)")
-    print(f"  Early Lead Win Rate: {snow['early_lead_win_rate']*100:.1f}%")
+    print(f"\n🎲 GAME DYNAMICS")
+    print(f"  Snowball Effect: {snow['snowball_index']:+.2f} (Early lead determines winner?)")
     print(f"  Comeback Rate: {kpis['comebacks']['comeback_rate']*100:.1f}%")
-    print(f"{'='*50}\n")
+    print(f"  Game Volatility: {adv['avg_volatility']:.2f} (Avg point swing per turn)")
+    
+    print(f"\n🍀 LUCK & STRATEGY")
+    luck = adv['luck_factor']
+    print(f"  Luck Influence: {luck['correlation_strength_score']:.2f} (Corr. Initial Hands vs Score)")
+    print(f"  Stronger Start Win Rate: {luck['stronger_hand_win_rate']*100:.1f}%")
+    
+    phases = adv['phases']
+    print(f"\n⏱️ PHASE DOMINANCE (Hands breakdown)")
+    print(f"  Early Game: P1 {phases['early']['p1']} - P2 {phases['early']['p2']}")
+    print(f"  Mid Game:   P1 {phases['mid']['p1']} - P2 {phases['mid']['p2']}")
+    print(f"  Late Game:  P1 {phases['late']['p1']} - P2 {phases['late']['p2']}")
+    print(f"{'='*60}\n")
 
 
-def _save_results(path, results, kpis, config, p1, p2):
+def _generate_graphs(results, kpis, p1, p2, game_name, filename):
+    """Genera grafici informativi usando Matplotlib."""
+    if plt is None: return
+
+    # Setup Plot
+    fig = plt.figure(figsize=(16, 12))
+    fig.suptitle(f"Game Analysis: {game_name}\n{p1} vs {p2}", fontsize=16)
+    
+    # 1. Win Distribution (Pie Chart)
+    ax1 = plt.subplot(2, 3, 1)
+    labels = [f'{p1} Wins', f'{p2} Wins', 'Draws']
+    sizes = [kpis['balance']['player1_win_rate'], kpis['balance']['player2_win_rate'], kpis['balance']['draw_rate']]
+    colors = ['#ff9999', '#66b3ff', '#99ff99']
+    
+    # Filter empty slices
+    valid_labels = [l for i, l in enumerate(labels) if sizes[i] > 0]
+    valid_sizes = [s for s in sizes if s > 0]
+    valid_colors = [c for i, c in enumerate(colors) if sizes[i] > 0]
+
+    if valid_sizes:
+        ax1.pie(valid_sizes, labels=valid_labels, colors=valid_colors, autopct='%1.1f%%', startangle=90)
+    else:
+        ax1.text(0.5, 0.5, "No Data", ha='center')
+    ax1.set_title('Win Distribution')
+
+    # 2. Score Evolution (Line Plot with Std Dev)
+    ax2 = plt.subplot(2, 3, 2)
+    # Get max length
+    max_len = 0
+    for r in results:
+        h = r.get('score_history', [])
+        if len(h) > max_len: max_len = len(h)
+    
+    if max_len > 0:
+        p1_trends = np.zeros(max_len)
+        p2_trends = np.zeros(max_len)
+        counts = np.zeros(max_len)
+        
+        for r in results:
+            h = r.get('score_history', [])
+            for i, state in enumerate(h):
+                p1_trends[i] += state.get('player1', 0)
+                p2_trends[i] += state.get('player2', 0)
+                counts[i] += 1
+                
+        # Averaging (handling different lengths)
+        valid_mask = counts > 0
+        p1_avg = np.divide(p1_trends, counts, where=valid_mask)
+        p2_avg = np.divide(p2_trends, counts, where=valid_mask)
+        
+        turns = range(1, len(p1_avg[valid_mask]) + 1)
+        ax2.plot(turns, p1_avg[valid_mask], label=p1, color='red')
+        ax2.plot(turns, p2_avg[valid_mask], label=p2, color='blue')
+        ax2.set_xlabel('Turn / Hand')
+        ax2.set_ylabel('Avg Score')
+        ax2.set_title('Score Trajectory')
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+    else:
+        ax2.text(0.5, 0.5, "No Score History", ha='center')
+
+    # 3. Score Difference Histogram
+    ax3 = plt.subplot(2, 3, 3)
+    score_diffs = [r['p1_score'] - r['p2_score'] for r in results]
+    if score_diffs:
+        ax3.hist(score_diffs, bins=min(20, len(set(score_diffs))+1), color='purple', alpha=0.7)
+        ax3.axvline(0, color='black', linestyle='dashed', linewidth=1)
+        ax3.set_title('Score Difference (P1 - P2)')
+        ax3.set_xlabel('Margin')
+    
+    # 4. Phase Dominance (Bar Chart)
+    ax4 = plt.subplot(2, 3, 4)
+    phases = kpis['advanced']['phases']
+    categories = ['Early', 'Mid', 'Late']
+    p1_vals = [phases['early']['p1'], phases['mid']['p1'], phases['late']['p1']]
+    p2_vals = [phases['early']['p2'], phases['mid']['p2'], phases['late']['p2']]
+    
+    x = np.arange(len(categories))
+    width = 0.35
+    ax4.bar(x - width/2, p1_vals, width, label=p1, color='red', alpha=0.6)
+    ax4.bar(x + width/2, p2_vals, width, label=p2, color='blue', alpha=0.6)
+    ax4.set_xticks(x)
+    ax4.set_xticklabels(categories)
+    ax4.set_title('Phase Dominance (Hands Leaders)')
+    ax4.legend()
+
+    # 5. Luck Correlation (Scatter)
+    ax5 = plt.subplot(2, 3, 5)
+    luck_diffs = []
+    final_diffs = []
+    for r in results:
+        if 'p1_initial_str' in r:
+            luck_diffs.append(r['p1_initial_str'] - r['p2_initial_str'])
+            final_diffs.append(r['p1_score'] - r['p2_score'])
+            
+    if luck_diffs:
+        ax5.scatter(luck_diffs, final_diffs, alpha=0.5, c='green', s=15)
+        ax5.set_xlabel('Initial Hand Strength Diff (P1 - P2)')
+        ax5.set_ylabel('Final Score Diff')
+        ax5.set_title(f'Luck Factor (Corr: {kpis["advanced"]["luck_factor"]["correlation_strength_score"]:.2f})')
+        ax5.grid(True, alpha=0.3)
+        
+        # Add trend line
+        if len(luck_diffs) > 1:
+             z = np.polyfit(luck_diffs, final_diffs, 1)
+             p = np.poly1d(z)
+             ax5.plot(luck_diffs, p(luck_diffs), "r--", alpha=0.5)
+
+    plt.tight_layout()
+    plt.savefig(filename)
+    print(f"📈 Grafico salvato: {filename}")
+    plt.close()
+
+
+def _save_results(path, results, kpis, config, p1, p2, plot_file=None):
     data = {
         "timestamp": datetime.now().isoformat(),
         "game": config.get('game', {}).get('name'),
         "players": {"p1": p1, "p2": p2},
         "kpis": kpis,
-        "results": results[:50]
+        "graphs": plot_file,
+        "results": results[:50] # Limit size
     }
     with open(path, 'w') as f:
         json.dump(data, f, indent=2)
@@ -344,3 +585,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
