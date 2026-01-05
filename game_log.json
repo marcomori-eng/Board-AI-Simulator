@@ -1,0 +1,1196 @@
+{
+  "timestamp": "2026-01-05T13:05:56.351405",
+  "config": {
+    "player1": "aggressive",
+    "player2": "conservative",
+    "seed": 42
+  },
+  "result": {
+    "game_id": "213cfe19",
+    "winner": "player1",
+    "player1_score": 69,
+    "player2_score": 51,
+    "total_hands": 40
+  },
+  "events": [
+    {
+      "timestamp": "2026-01-05T13:05:56.343603",
+      "type": "game_start",
+      "data": {
+        "game_id": "213cfe19",
+        "trump_card": "2 di coppe",
+        "trump_suit": "coppe",
+        "player1": "player1",
+        "player1_profile": "Aggressivo",
+        "player2": "player2",
+        "player2_profile": "Conservativo",
+        "player1_hand": [
+          "5 di coppe",
+          "Tre di coppe",
+          "5 di denari"
+        ],
+        "player2_hand": [
+          "7 di denari",
+          "Fante di denari",
+          "4 di coppe"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343616",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 1,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343637",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "5 di denari",
+        "suit": "denari",
+        "rank": "5",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343655",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "7 di denari",
+        "suit": "denari",
+        "rank": "7",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343666",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 1,
+        "winner": "player2",
+        "points_won": 0,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343670",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "6 di coppe",
+        "cards_remaining": 33
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343672",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "7 di coppe",
+        "cards_remaining": 32
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343675",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 3,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343683",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "4 di coppe",
+        "suit": "coppe",
+        "rank": "4",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343690",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "5 di coppe",
+        "suit": "coppe",
+        "rank": "5",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343696",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 3,
+        "winner": "player1",
+        "points_won": 0,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343699",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "5 di bastoni",
+        "cards_remaining": 31
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343700",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "4 di spade",
+        "cards_remaining": 30
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343702",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 5,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343708",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "5 di bastoni",
+        "suit": "bastoni",
+        "rank": "5",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343713",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "4 di spade",
+        "suit": "spade",
+        "rank": "4",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343717",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 5,
+        "winner": "player1",
+        "points_won": 0,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343719",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Asso di coppe",
+        "cards_remaining": 29
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343721",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Re di coppe",
+        "cards_remaining": 28
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343722",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 7,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343727",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Tre di coppe",
+        "suit": "coppe",
+        "rank": "Tre",
+        "points": 10,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343731",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "6 di coppe",
+        "suit": "coppe",
+        "rank": "6",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343734",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 7,
+        "winner": "player1",
+        "points_won": 10,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343736",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Cavallo di spade",
+        "cards_remaining": 27
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343737",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "2 di spade",
+        "cards_remaining": 26
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343739",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 9,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343743",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Cavallo di spade",
+        "suit": "spade",
+        "rank": "Cavallo",
+        "points": 3,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343747",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "2 di spade",
+        "suit": "spade",
+        "rank": "2",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343751",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 9,
+        "winner": "player1",
+        "points_won": 3,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343753",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "6 di denari",
+        "cards_remaining": 25
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343754",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "2 di denari",
+        "cards_remaining": 24
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343755",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 11,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343759",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "6 di denari",
+        "suit": "denari",
+        "rank": "6",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343763",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "2 di denari",
+        "suit": "denari",
+        "rank": "2",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343765",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 11,
+        "winner": "player1",
+        "points_won": 0,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343767",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "2 di bastoni",
+        "cards_remaining": 23
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343768",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "5 di spade",
+        "cards_remaining": 22
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343770",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 13,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343774",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "2 di bastoni",
+        "suit": "bastoni",
+        "rank": "2",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343779",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "5 di spade",
+        "suit": "spade",
+        "rank": "5",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343782",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 13,
+        "winner": "player1",
+        "points_won": 0,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343784",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Tre di spade",
+        "cards_remaining": 21
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343785",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Asso di bastoni",
+        "cards_remaining": 20
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343786",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 15,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343790",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Tre di spade",
+        "suit": "spade",
+        "rank": "Tre",
+        "points": 10,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343794",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Fante di denari",
+        "suit": "denari",
+        "rank": "Fante",
+        "points": 2,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343797",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 15,
+        "winner": "player1",
+        "points_won": 12,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343798",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Re di bastoni",
+        "cards_remaining": 19
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343800",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Cavallo di denari",
+        "cards_remaining": 18
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343802",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 17,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343805",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Re di bastoni",
+        "suit": "bastoni",
+        "rank": "Re",
+        "points": 4,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343808",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Asso di bastoni",
+        "suit": "bastoni",
+        "rank": "Asso",
+        "points": 11,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343811",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 17,
+        "winner": "player2",
+        "points_won": 15,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343813",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "6 di bastoni",
+        "cards_remaining": 17
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343814",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "7 di spade",
+        "cards_remaining": 16
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343815",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 19,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343819",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "6 di bastoni",
+        "suit": "bastoni",
+        "rank": "6",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343822",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "7 di spade",
+        "suit": "spade",
+        "rank": "7",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343825",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 19,
+        "winner": "player2",
+        "points_won": 0,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343826",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Fante di spade",
+        "cards_remaining": 15
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343827",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Re di denari",
+        "cards_remaining": 14
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343829",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 21,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343832",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Fante di spade",
+        "suit": "spade",
+        "rank": "Fante",
+        "points": 2,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343835",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "7 di coppe",
+        "suit": "coppe",
+        "rank": "7",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343838",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 21,
+        "winner": "player1",
+        "points_won": 2,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343841",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "4 di denari",
+        "cards_remaining": 13
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343842",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Cavallo di bastoni",
+        "cards_remaining": 12
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343843",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 23,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343847",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "4 di denari",
+        "suit": "denari",
+        "rank": "4",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343850",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Cavallo di denari",
+        "suit": "denari",
+        "rank": "Cavallo",
+        "points": 3,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343854",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 23,
+        "winner": "player2",
+        "points_won": 3,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343855",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "4 di bastoni",
+        "cards_remaining": 11
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343858",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Tre di bastoni",
+        "cards_remaining": 10
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343859",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 25,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343863",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "4 di bastoni",
+        "suit": "bastoni",
+        "rank": "4",
+        "points": 0,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343866",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Re di denari",
+        "suit": "denari",
+        "rank": "Re",
+        "points": 4,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343869",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 25,
+        "winner": "player2",
+        "points_won": 4,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343872",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Re di spade",
+        "cards_remaining": 9
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343874",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Fante di coppe",
+        "cards_remaining": 8
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343875",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 27,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343878",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Cavallo di bastoni",
+        "suit": "bastoni",
+        "rank": "Cavallo",
+        "points": 3,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343881",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Tre di bastoni",
+        "suit": "bastoni",
+        "rank": "Tre",
+        "points": 10,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343884",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 27,
+        "winner": "player1",
+        "points_won": 13,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343885",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Tre di denari",
+        "cards_remaining": 7
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343886",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Asso di spade",
+        "cards_remaining": 6
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343888",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 29,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343891",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Tre di denari",
+        "suit": "denari",
+        "rank": "Tre",
+        "points": 10,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343894",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Re di coppe",
+        "suit": "coppe",
+        "rank": "Re",
+        "points": 4,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343897",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 29,
+        "winner": "player2",
+        "points_won": 14,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343898",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "Fante di bastoni",
+        "cards_remaining": 5
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343900",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "7 di bastoni",
+        "cards_remaining": 4
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343901",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 31,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343904",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Re di spade",
+        "suit": "spade",
+        "rank": "Re",
+        "points": 4,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343911",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "7 di bastoni",
+        "suit": "bastoni",
+        "rank": "7",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343914",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 31,
+        "winner": "player2",
+        "points_won": 4,
+        "trump_used": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343915",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "6 di spade",
+        "cards_remaining": 3
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343917",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Asso di denari",
+        "cards_remaining": 2
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343918",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 33,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343921",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Fante di bastoni",
+        "suit": "bastoni",
+        "rank": "Fante",
+        "points": 2,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343924",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Fante di coppe",
+        "suit": "coppe",
+        "rank": "Fante",
+        "points": 2,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343927",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 33,
+        "winner": "player1",
+        "points_won": 4,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343928",
+      "type": "card_drawn",
+      "data": {
+        "player": "player1",
+        "card": "Cavallo di coppe",
+        "cards_remaining": 1
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343930",
+      "type": "card_drawn",
+      "data": {
+        "player": "player2",
+        "card": "2 di coppe",
+        "cards_remaining": 0
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343931",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 35,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343936",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Asso di coppe",
+        "suit": "coppe",
+        "rank": "Asso",
+        "points": 11,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343940",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "6 di spade",
+        "suit": "spade",
+        "rank": "6",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343942",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 35,
+        "winner": "player1",
+        "points_won": 11,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343944",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 37,
+        "first_player": "player1"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343947",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Asso di denari",
+        "suit": "denari",
+        "rank": "Asso",
+        "points": 11,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343952",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "2 di coppe",
+        "suit": "coppe",
+        "rank": "2",
+        "points": 0,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343954",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 37,
+        "winner": "player2",
+        "points_won": 11,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343955",
+      "type": "hand_start",
+      "data": {
+        "hand_number": 39,
+        "first_player": "player2"
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343957",
+      "type": "card_played",
+      "data": {
+        "player": "player2",
+        "card": "Asso di spade",
+        "suit": "spade",
+        "rank": "Asso",
+        "points": 11,
+        "is_first": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343958",
+      "type": "card_played",
+      "data": {
+        "player": "player1",
+        "card": "Cavallo di coppe",
+        "suit": "coppe",
+        "rank": "Cavallo",
+        "points": 3,
+        "is_first": false
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343960",
+      "type": "hand_result",
+      "data": {
+        "hand_number": 39,
+        "winner": "player1",
+        "points_won": 14,
+        "trump_used": true
+      }
+    },
+    {
+      "timestamp": "2026-01-05T13:05:56.343964",
+      "type": "game_end",
+      "data": {
+        "winner": "player1",
+        "player1_score": 69,
+        "player2_score": 51,
+        "total_hands": 40
+      }
+    }
+  ]
+}

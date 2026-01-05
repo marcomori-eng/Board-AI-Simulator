@@ -1,0 +1,1450 @@
+{
+  "timestamp": "2026-01-05T12:48:17.101882",
+  "config": {
+    "player1": "aggressive",
+    "player2": "conservative",
+    "games": 200,
+    "seed": null
+  },
+  "kpis": {
+    "balance": {
+      "player1_win_rate": 0.615,
+      "player2_win_rate": 0.33,
+      "draw_rate": 0.055,
+      "first_player_advantage": 0.285,
+      "balance_score": 0.7150000000000001
+    },
+    "scoring": {
+      "player1_avg_score": 66.9,
+      "player2_avg_score": 53.1,
+      "player1_score_std": 17.820151204317085,
+      "player2_score_std": 17.820151204317085,
+      "avg_score_diff": 13.8,
+      "max_score_diff": 120,
+      "min_score_diff": -82
+    },
+    "game_types": {
+      "close_games_rate": 0.315,
+      "blowout_rate": 0.29,
+      "avg_hands_per_game": 40,
+      "avg_trump_usage": 8.47
+    },
+    "snowball": {
+      "early_lead_win_rate": 0.6666666666666666,
+      "snowball_index": 0.16666666666666663,
+      "avg_decisive_hand": 17.666666666666668,
+      "median_decisive_hand": 18
+    },
+    "comebacks": {
+      "comeback_rate": 0.255,
+      "avg_lead_changes": 1.725,
+      "max_lead_changes": 7
+    },
+    "performance": {
+      "avg_game_duration_ms": 0.44773,
+      "total_games": 200
+    }
+  },
+  "games_summary": [
+    {
+      "game_id": "b6735613",
+      "winner": "player1",
+      "p1_score": 87,
+      "p2_score": 33,
+      "hands": 40
+    },
+    {
+      "game_id": "d63e907e",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "e469b3e8",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "8663aa93",
+      "winner": "player1",
+      "p1_score": 74,
+      "p2_score": 46,
+      "hands": 40
+    },
+    {
+      "game_id": "0daadc18",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "a2fe97ae",
+      "winner": "player2",
+      "p1_score": 56,
+      "p2_score": 64,
+      "hands": 40
+    },
+    {
+      "game_id": "60906441",
+      "winner": "player1",
+      "p1_score": 70,
+      "p2_score": 50,
+      "hands": 40
+    },
+    {
+      "game_id": "9ee3255f",
+      "winner": "player2",
+      "p1_score": 19,
+      "p2_score": 101,
+      "hands": 40
+    },
+    {
+      "game_id": "d59842a9",
+      "winner": "player1",
+      "p1_score": 92,
+      "p2_score": 28,
+      "hands": 40
+    },
+    {
+      "game_id": "166cd63e",
+      "winner": "player1",
+      "p1_score": 103,
+      "p2_score": 17,
+      "hands": 40
+    },
+    {
+      "game_id": "00e8c1c7",
+      "winner": "player2",
+      "p1_score": 40,
+      "p2_score": 80,
+      "hands": 40
+    },
+    {
+      "game_id": "86bbc211",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "d786adc0",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "f1a3fd0d",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "321ef0a3",
+      "winner": "player1",
+      "p1_score": 64,
+      "p2_score": 56,
+      "hands": 40
+    },
+    {
+      "game_id": "b14337da",
+      "winner": "player2",
+      "p1_score": 33,
+      "p2_score": 87,
+      "hands": 40
+    },
+    {
+      "game_id": "b56a20b1",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "effc56a7",
+      "winner": "player2",
+      "p1_score": 55,
+      "p2_score": 65,
+      "hands": 40
+    },
+    {
+      "game_id": "cab1eb12",
+      "winner": "player1",
+      "p1_score": 78,
+      "p2_score": 42,
+      "hands": 40
+    },
+    {
+      "game_id": "ef5669ae",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "484a457e",
+      "winner": "player2",
+      "p1_score": 53,
+      "p2_score": 67,
+      "hands": 40
+    },
+    {
+      "game_id": "9413ecfc",
+      "winner": "player1",
+      "p1_score": 64,
+      "p2_score": 56,
+      "hands": 40
+    },
+    {
+      "game_id": "14998d4a",
+      "winner": "player2",
+      "p1_score": 48,
+      "p2_score": 72,
+      "hands": 40
+    },
+    {
+      "game_id": "26feb8c8",
+      "winner": "player1",
+      "p1_score": 74,
+      "p2_score": 46,
+      "hands": 40
+    },
+    {
+      "game_id": "a4c5b36e",
+      "winner": "player2",
+      "p1_score": 53,
+      "p2_score": 67,
+      "hands": 40
+    },
+    {
+      "game_id": "194d5e4a",
+      "winner": "player2",
+      "p1_score": 56,
+      "p2_score": 64,
+      "hands": 40
+    },
+    {
+      "game_id": "a8588127",
+      "winner": "player2",
+      "p1_score": 46,
+      "p2_score": 74,
+      "hands": 40
+    },
+    {
+      "game_id": "74faeb53",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "6f0fa188",
+      "winner": "player2",
+      "p1_score": 38,
+      "p2_score": 82,
+      "hands": 40
+    },
+    {
+      "game_id": "fb3db7de",
+      "winner": "player2",
+      "p1_score": 47,
+      "p2_score": 73,
+      "hands": 40
+    },
+    {
+      "game_id": "e7830059",
+      "winner": "player1",
+      "p1_score": 65,
+      "p2_score": 55,
+      "hands": 40
+    },
+    {
+      "game_id": "0539bf26",
+      "winner": "player1",
+      "p1_score": 92,
+      "p2_score": 28,
+      "hands": 40
+    },
+    {
+      "game_id": "9a3098e2",
+      "winner": "player2",
+      "p1_score": 37,
+      "p2_score": 83,
+      "hands": 40
+    },
+    {
+      "game_id": "11e7fbbe",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "13351e00",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "f9d4f74d",
+      "winner": "player1",
+      "p1_score": 69,
+      "p2_score": 51,
+      "hands": 40
+    },
+    {
+      "game_id": "43186334",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "966b14c4",
+      "winner": "player1",
+      "p1_score": 69,
+      "p2_score": 51,
+      "hands": 40
+    },
+    {
+      "game_id": "0a816fdc",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "ac430cbd",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "bd2441f4",
+      "winner": "player1",
+      "p1_score": 86,
+      "p2_score": 34,
+      "hands": 40
+    },
+    {
+      "game_id": "2f76f499",
+      "winner": "player2",
+      "p1_score": 34,
+      "p2_score": 86,
+      "hands": 40
+    },
+    {
+      "game_id": "ef66ae9e",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "1c987dcd",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "0548a0cc",
+      "winner": "player1",
+      "p1_score": 80,
+      "p2_score": 40,
+      "hands": 40
+    },
+    {
+      "game_id": "d0ea766c",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "7dd927c7",
+      "winner": "player1",
+      "p1_score": 78,
+      "p2_score": 42,
+      "hands": 40
+    },
+    {
+      "game_id": "165b14ee",
+      "winner": "player1",
+      "p1_score": 90,
+      "p2_score": 30,
+      "hands": 40
+    },
+    {
+      "game_id": "6e6ffd00",
+      "winner": "player1",
+      "p1_score": 97,
+      "p2_score": 23,
+      "hands": 40
+    },
+    {
+      "game_id": "9507be1f",
+      "winner": "player1",
+      "p1_score": 65,
+      "p2_score": 55,
+      "hands": 40
+    },
+    {
+      "game_id": "bd812d8f",
+      "winner": "player1",
+      "p1_score": 83,
+      "p2_score": 37,
+      "hands": 40
+    },
+    {
+      "game_id": "ba64f73a",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "52043a85",
+      "winner": "player1",
+      "p1_score": 93,
+      "p2_score": 27,
+      "hands": 40
+    },
+    {
+      "game_id": "7ccacf9f",
+      "winner": "player2",
+      "p1_score": 38,
+      "p2_score": 82,
+      "hands": 40
+    },
+    {
+      "game_id": "395542d5",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "6c009190",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "f5465935",
+      "winner": "player1",
+      "p1_score": 71,
+      "p2_score": 49,
+      "hands": 40
+    },
+    {
+      "game_id": "9960ecc3",
+      "winner": "player2",
+      "p1_score": 51,
+      "p2_score": 69,
+      "hands": 40
+    },
+    {
+      "game_id": "0ffa48dc",
+      "winner": "player1",
+      "p1_score": 87,
+      "p2_score": 33,
+      "hands": 40
+    },
+    {
+      "game_id": "d15a9f3d",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "8d2d9cc3",
+      "winner": "player1",
+      "p1_score": 97,
+      "p2_score": 23,
+      "hands": 40
+    },
+    {
+      "game_id": "0fb1348f",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "4a229a57",
+      "winner": "player1",
+      "p1_score": 96,
+      "p2_score": 24,
+      "hands": 40
+    },
+    {
+      "game_id": "f875fe66",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "a260f543",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "d7567830",
+      "winner": "player1",
+      "p1_score": 101,
+      "p2_score": 19,
+      "hands": 40
+    },
+    {
+      "game_id": "39341303",
+      "winner": "player1",
+      "p1_score": 72,
+      "p2_score": 48,
+      "hands": 40
+    },
+    {
+      "game_id": "b4a63a97",
+      "winner": "player1",
+      "p1_score": 85,
+      "p2_score": 35,
+      "hands": 40
+    },
+    {
+      "game_id": "4276a4d4",
+      "winner": "player1",
+      "p1_score": 73,
+      "p2_score": 47,
+      "hands": 40
+    },
+    {
+      "game_id": "1e27eecc",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "f5a36ffb",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "eeb8aeb6",
+      "winner": "player2",
+      "p1_score": 59,
+      "p2_score": 61,
+      "hands": 40
+    },
+    {
+      "game_id": "dedddbd9",
+      "winner": "player1",
+      "p1_score": 75,
+      "p2_score": 45,
+      "hands": 40
+    },
+    {
+      "game_id": "8ebe615f",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "d2269ef4",
+      "winner": "player2",
+      "p1_score": 52,
+      "p2_score": 68,
+      "hands": 40
+    },
+    {
+      "game_id": "4c6a191f",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "fe2d0d3f",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "0297788b",
+      "winner": "player1",
+      "p1_score": 70,
+      "p2_score": 50,
+      "hands": 40
+    },
+    {
+      "game_id": "53e3660a",
+      "winner": "player1",
+      "p1_score": 99,
+      "p2_score": 21,
+      "hands": 40
+    },
+    {
+      "game_id": "fcfa7613",
+      "winner": "player1",
+      "p1_score": 100,
+      "p2_score": 20,
+      "hands": 40
+    },
+    {
+      "game_id": "8755f205",
+      "winner": "player1",
+      "p1_score": 98,
+      "p2_score": 22,
+      "hands": 40
+    },
+    {
+      "game_id": "42d3e4f4",
+      "winner": "player2",
+      "p1_score": 56,
+      "p2_score": 64,
+      "hands": 40
+    },
+    {
+      "game_id": "23b964c1",
+      "winner": "player1",
+      "p1_score": 91,
+      "p2_score": 29,
+      "hands": 40
+    },
+    {
+      "game_id": "cca30b12",
+      "winner": "player2",
+      "p1_score": 55,
+      "p2_score": 65,
+      "hands": 40
+    },
+    {
+      "game_id": "63d9c086",
+      "winner": "player1",
+      "p1_score": 80,
+      "p2_score": 40,
+      "hands": 40
+    },
+    {
+      "game_id": "8de0b441",
+      "winner": "player1",
+      "p1_score": 95,
+      "p2_score": 25,
+      "hands": 40
+    },
+    {
+      "game_id": "b558e6f8",
+      "winner": "player2",
+      "p1_score": 52,
+      "p2_score": 68,
+      "hands": 40
+    },
+    {
+      "game_id": "93b52c33",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "34355dd9",
+      "winner": "player1",
+      "p1_score": 84,
+      "p2_score": 36,
+      "hands": 40
+    },
+    {
+      "game_id": "9f77539c",
+      "winner": "player1",
+      "p1_score": 79,
+      "p2_score": 41,
+      "hands": 40
+    },
+    {
+      "game_id": "ca1721e8",
+      "winner": "player1",
+      "p1_score": 71,
+      "p2_score": 49,
+      "hands": 40
+    },
+    {
+      "game_id": "325740ef",
+      "winner": "player1",
+      "p1_score": 92,
+      "p2_score": 28,
+      "hands": 40
+    },
+    {
+      "game_id": "a47e7c6b",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "38b7299a",
+      "winner": "player1",
+      "p1_score": 82,
+      "p2_score": 38,
+      "hands": 40
+    },
+    {
+      "game_id": "21fd15a7",
+      "winner": "player2",
+      "p1_score": 53,
+      "p2_score": 67,
+      "hands": 40
+    },
+    {
+      "game_id": "19136fa8",
+      "winner": "player1",
+      "p1_score": 98,
+      "p2_score": 22,
+      "hands": 40
+    },
+    {
+      "game_id": "5059071d",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "7f570d66",
+      "winner": "player2",
+      "p1_score": 20,
+      "p2_score": 100,
+      "hands": 40
+    },
+    {
+      "game_id": "1847c90f",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "47ca786f",
+      "winner": "player2",
+      "p1_score": 35,
+      "p2_score": 85,
+      "hands": 40
+    },
+    {
+      "game_id": "0650c9dc",
+      "winner": "player2",
+      "p1_score": 47,
+      "p2_score": 73,
+      "hands": 40
+    },
+    {
+      "game_id": "7a1201e2",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "6d0cbb4e",
+      "winner": "player1",
+      "p1_score": 79,
+      "p2_score": 41,
+      "hands": 40
+    },
+    {
+      "game_id": "27df1134",
+      "winner": "player1",
+      "p1_score": 62,
+      "p2_score": 58,
+      "hands": 40
+    },
+    {
+      "game_id": "33f1cdf0",
+      "winner": "player1",
+      "p1_score": 66,
+      "p2_score": 54,
+      "hands": 40
+    },
+    {
+      "game_id": "97a96480",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "caff6ac1",
+      "winner": "player2",
+      "p1_score": 37,
+      "p2_score": 83,
+      "hands": 40
+    },
+    {
+      "game_id": "dbbc185a",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "b8bc4b44",
+      "winner": "player1",
+      "p1_score": 65,
+      "p2_score": 55,
+      "hands": 40
+    },
+    {
+      "game_id": "8c887d4e",
+      "winner": "player1",
+      "p1_score": 75,
+      "p2_score": 45,
+      "hands": 40
+    },
+    {
+      "game_id": "ba9cae49",
+      "winner": "player2",
+      "p1_score": 42,
+      "p2_score": 78,
+      "hands": 40
+    },
+    {
+      "game_id": "c7a3aa0f",
+      "winner": "player1",
+      "p1_score": 62,
+      "p2_score": 58,
+      "hands": 40
+    },
+    {
+      "game_id": "bfb2681e",
+      "winner": "player1",
+      "p1_score": 73,
+      "p2_score": 47,
+      "hands": 40
+    },
+    {
+      "game_id": "2917a673",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "ccee353b",
+      "winner": "player2",
+      "p1_score": 55,
+      "p2_score": 65,
+      "hands": 40
+    },
+    {
+      "game_id": "e67fc112",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "d02b980f",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "2352b996",
+      "winner": "player1",
+      "p1_score": 82,
+      "p2_score": 38,
+      "hands": 40
+    },
+    {
+      "game_id": "d7d83780",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "94dd853d",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "36398224",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "144048cf",
+      "winner": "player2",
+      "p1_score": 54,
+      "p2_score": 66,
+      "hands": 40
+    },
+    {
+      "game_id": "bc9913c8",
+      "winner": "player1",
+      "p1_score": 98,
+      "p2_score": 22,
+      "hands": 40
+    },
+    {
+      "game_id": "c4d16249",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "68d65783",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "e3674f12",
+      "winner": "player1",
+      "p1_score": 65,
+      "p2_score": 55,
+      "hands": 40
+    },
+    {
+      "game_id": "7cc81937",
+      "winner": "player1",
+      "p1_score": 92,
+      "p2_score": 28,
+      "hands": 40
+    },
+    {
+      "game_id": "33327359",
+      "winner": "player1",
+      "p1_score": 101,
+      "p2_score": 19,
+      "hands": 40
+    },
+    {
+      "game_id": "4144caa1",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "34bd2ec0",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "54f37690",
+      "winner": "player2",
+      "p1_score": 42,
+      "p2_score": 78,
+      "hands": 40
+    },
+    {
+      "game_id": "0b5d5c29",
+      "winner": "player2",
+      "p1_score": 46,
+      "p2_score": 74,
+      "hands": 40
+    },
+    {
+      "game_id": "659e4b12",
+      "winner": "player1",
+      "p1_score": 64,
+      "p2_score": 56,
+      "hands": 40
+    },
+    {
+      "game_id": "e34661d2",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "65c65c60",
+      "winner": "player1",
+      "p1_score": 90,
+      "p2_score": 30,
+      "hands": 40
+    },
+    {
+      "game_id": "b49144de",
+      "winner": "player2",
+      "p1_score": 51,
+      "p2_score": 69,
+      "hands": 40
+    },
+    {
+      "game_id": "7517b81f",
+      "winner": "player2",
+      "p1_score": 52,
+      "p2_score": 68,
+      "hands": 40
+    },
+    {
+      "game_id": "3a78db8b",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "ca734628",
+      "winner": "player1",
+      "p1_score": 105,
+      "p2_score": 15,
+      "hands": 40
+    },
+    {
+      "game_id": "7deb2bd2",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "d601a738",
+      "winner": "player1",
+      "p1_score": 73,
+      "p2_score": 47,
+      "hands": 40
+    },
+    {
+      "game_id": "dded0a3b",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "c71e749e",
+      "winner": "player1",
+      "p1_score": 78,
+      "p2_score": 42,
+      "hands": 40
+    },
+    {
+      "game_id": "b457441e",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "5ff306fa",
+      "winner": "player1",
+      "p1_score": 72,
+      "p2_score": 48,
+      "hands": 40
+    },
+    {
+      "game_id": "c519dba3",
+      "winner": "player1",
+      "p1_score": 67,
+      "p2_score": 53,
+      "hands": 40
+    },
+    {
+      "game_id": "5018bb53",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "9e4b51f4",
+      "winner": "player2",
+      "p1_score": 39,
+      "p2_score": 81,
+      "hands": 40
+    },
+    {
+      "game_id": "49a9bd6d",
+      "winner": "player2",
+      "p1_score": 50,
+      "p2_score": 70,
+      "hands": 40
+    },
+    {
+      "game_id": "c5a80139",
+      "winner": "player2",
+      "p1_score": 54,
+      "p2_score": 66,
+      "hands": 40
+    },
+    {
+      "game_id": "22f6908d",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "d406fda9",
+      "winner": "player1",
+      "p1_score": 69,
+      "p2_score": 51,
+      "hands": 40
+    },
+    {
+      "game_id": "e6c29999",
+      "winner": "player1",
+      "p1_score": 64,
+      "p2_score": 56,
+      "hands": 40
+    },
+    {
+      "game_id": "a7345cfe",
+      "winner": "player1",
+      "p1_score": 76,
+      "p2_score": 44,
+      "hands": 40
+    },
+    {
+      "game_id": "559c7fe3",
+      "winner": "player1",
+      "p1_score": 98,
+      "p2_score": 22,
+      "hands": 40
+    },
+    {
+      "game_id": "ff2a55b7",
+      "winner": "player2",
+      "p1_score": 55,
+      "p2_score": 65,
+      "hands": 40
+    },
+    {
+      "game_id": "3dc91837",
+      "winner": "player1",
+      "p1_score": 72,
+      "p2_score": 48,
+      "hands": 40
+    },
+    {
+      "game_id": "3afccd6b",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "79b115b0",
+      "winner": "player2",
+      "p1_score": 46,
+      "p2_score": 74,
+      "hands": 40
+    },
+    {
+      "game_id": "fe6ed429",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "20625003",
+      "winner": "player1",
+      "p1_score": 61,
+      "p2_score": 59,
+      "hands": 40
+    },
+    {
+      "game_id": "4bcb67e4",
+      "winner": "player2",
+      "p1_score": 25,
+      "p2_score": 95,
+      "hands": 40
+    },
+    {
+      "game_id": "249c4184",
+      "winner": "player1",
+      "p1_score": 96,
+      "p2_score": 24,
+      "hands": 40
+    },
+    {
+      "game_id": "48eefa13",
+      "winner": "player1",
+      "p1_score": 80,
+      "p2_score": 40,
+      "hands": 40
+    },
+    {
+      "game_id": "dc58f104",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "8facface",
+      "winner": "player1",
+      "p1_score": 92,
+      "p2_score": 28,
+      "hands": 40
+    },
+    {
+      "game_id": "5bd453b8",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "78162907",
+      "winner": "player1",
+      "p1_score": 94,
+      "p2_score": 26,
+      "hands": 40
+    },
+    {
+      "game_id": "3c9206b2",
+      "winner": "player1",
+      "p1_score": 66,
+      "p2_score": 54,
+      "hands": 40
+    },
+    {
+      "game_id": "3970db70",
+      "winner": "player2",
+      "p1_score": 57,
+      "p2_score": 63,
+      "hands": 40
+    },
+    {
+      "game_id": "9d6e52d3",
+      "winner": "player2",
+      "p1_score": 38,
+      "p2_score": 82,
+      "hands": 40
+    },
+    {
+      "game_id": "8b6b1274",
+      "winner": "player1",
+      "p1_score": 85,
+      "p2_score": 35,
+      "hands": 40
+    },
+    {
+      "game_id": "252fd9eb",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "71c11535",
+      "winner": "player2",
+      "p1_score": 49,
+      "p2_score": 71,
+      "hands": 40
+    },
+    {
+      "game_id": "ba3c0b5b",
+      "winner": "player1",
+      "p1_score": 65,
+      "p2_score": 55,
+      "hands": 40
+    },
+    {
+      "game_id": "fa3879bc",
+      "winner": "player2",
+      "p1_score": 44,
+      "p2_score": 76,
+      "hands": 40
+    },
+    {
+      "game_id": "8ce53eb2",
+      "winner": "player1",
+      "p1_score": 93,
+      "p2_score": 27,
+      "hands": 40
+    },
+    {
+      "game_id": "b410fc85",
+      "winner": "player1",
+      "p1_score": 90,
+      "p2_score": 30,
+      "hands": 40
+    },
+    {
+      "game_id": "dce6f16a",
+      "winner": "player1",
+      "p1_score": 120,
+      "p2_score": 0,
+      "hands": 40
+    },
+    {
+      "game_id": "68e1993e",
+      "winner": "player1",
+      "p1_score": 62,
+      "p2_score": 58,
+      "hands": 40
+    },
+    {
+      "game_id": "0b8905a5",
+      "winner": "player1",
+      "p1_score": 77,
+      "p2_score": 43,
+      "hands": 40
+    },
+    {
+      "game_id": "e1f910c9",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "aa8c0df9",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "dd069929",
+      "winner": "player1",
+      "p1_score": 104,
+      "p2_score": 16,
+      "hands": 40
+    },
+    {
+      "game_id": "d3bbd6f3",
+      "winner": "player1",
+      "p1_score": 64,
+      "p2_score": 56,
+      "hands": 40
+    },
+    {
+      "game_id": "395b342f",
+      "winner": "player1",
+      "p1_score": 79,
+      "p2_score": 41,
+      "hands": 40
+    },
+    {
+      "game_id": "e72e723b",
+      "winner": "player2",
+      "p1_score": 55,
+      "p2_score": 65,
+      "hands": 40
+    },
+    {
+      "game_id": "628a5f31",
+      "winner": "player1",
+      "p1_score": 100,
+      "p2_score": 20,
+      "hands": 40
+    },
+    {
+      "game_id": "d9e3e60e",
+      "winner": "player1",
+      "p1_score": 81,
+      "p2_score": 39,
+      "hands": 40
+    },
+    {
+      "game_id": "066d4be7",
+      "winner": "player1",
+      "p1_score": 62,
+      "p2_score": 58,
+      "hands": 40
+    },
+    {
+      "game_id": "1aad553d",
+      "winner": "player1",
+      "p1_score": 80,
+      "p2_score": 40,
+      "hands": 40
+    },
+    {
+      "game_id": "7d875ffb",
+      "winner": "player1",
+      "p1_score": 66,
+      "p2_score": 54,
+      "hands": 40
+    },
+    {
+      "game_id": "5cc8a350",
+      "winner": "player2",
+      "p1_score": 58,
+      "p2_score": 62,
+      "hands": 40
+    },
+    {
+      "game_id": "22d0c08a",
+      "winner": "player2",
+      "p1_score": 45,
+      "p2_score": 75,
+      "hands": 40
+    },
+    {
+      "game_id": "96c3c022",
+      "winner": "player1",
+      "p1_score": 68,
+      "p2_score": 52,
+      "hands": 40
+    },
+    {
+      "game_id": "45020590",
+      "winner": "player2",
+      "p1_score": 49,
+      "p2_score": 71,
+      "hands": 40
+    },
+    {
+      "game_id": "891ecfa4",
+      "winner": "player1",
+      "p1_score": 98,
+      "p2_score": 22,
+      "hands": 40
+    },
+    {
+      "game_id": "49f98046",
+      "winner": "player1",
+      "p1_score": 63,
+      "p2_score": 57,
+      "hands": 40
+    },
+    {
+      "game_id": "8a6d7441",
+      "winner": null,
+      "p1_score": 60,
+      "p2_score": 60,
+      "hands": 40
+    },
+    {
+      "game_id": "7abbbe54",
+      "winner": "player2",
+      "p1_score": 59,
+      "p2_score": 61,
+      "hands": 40
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+game:
+  name: "Fuga dal Castello di Re Burlone"
+  type: "board_game"
+  version: "1.0"
+  language: "it"
+  origin: "Fantasy"
+
+players:
+  min: 2
+  max: 4
+  recommended: [4]
+  team_play: false
+
+duration:
+  min_minutes: 30
+  max_minutes: 60
+
+components:
+  board:
+    name: "Percorso Castello"
+    type: "path" # Nuovo campo per distinguere da 'map'
+    length: 30
+    spaces:
+      - id: "1"
+        name: "Le Segrete"
+        type: "start"
+      - id: "3"
+        name: "Cassa Abbandonata"
+        effect: "draw_card"
+      - id: "4"
+        name: "Pavimento Scivoloso"
+        effect: "roll_again_check"
+      - id: "5"
+        name: "Cucina Reale"
+        effect: "skip_turn"
+      - id: "6"
+        name: "Scala a Chiocciola"
+        effect: "move_to_8"
+      - id: "7"
+        name: "Guardia Addormentata"
+        effect: "roll_check_reset"
+      - id: "9"
+        name: "Passaggio Segreto"
+        effect: "draw_card"
+      - id: "10"
+        name: "Sala Specchi"
+        effect: "swap_last"
+      - id: "12"
+        name: "Botola"
+        effect: "move_to_9"
+      - id: "13"
+        name: "Tesoro"
+        effect: "draw_2_cards"
+      - id: "14"
+        name: "Armatura"
+        effect: "back_2"
+      - id: "15"
+        name: "Cortile Interno"
+        type: "safe_zone"
+        effect: "get_key"
+      - id: "16"
+        name: "Canile"
+        effect: "check_bone_or_back_3"
+      - id: "18"
+        name: "Re Burlone"
+        effect: "lock_odd"
+      - id: "19"
+        name: "Scivolo"
+        effect: "move_to_15"
+      - id: "20"
+        name: "Torre"
+        effect: "opp_back_2"
+      - id: "21"
+        name: "Ponte"
+        effect: "roll_1_reset"
+      - id: "22"
+        name: "Cassa"
+        effect: "draw_card"
+      - id: "24"
+        name: "Mura"
+        effect: "forward_1"
+      - id: "25"
+        name: "Arciere"
+        effect: "roll_12_skip"
+      - id: "26"
+        name: "Portone"
+        effect: "check_key_or_6"
+      - id: "28"
+        name: "Cane Gigante"
+        effect: "move_to_24"
+      - id: "29"
+        name: "Catapulta"
+        effect: "roll_even_win_odd_back_20"
+      - id: "30"
+        name: "Ponte Levatoio"
+        type: "finish"
+        rule: "exact_roll"
+
+  dice:
+    quantity: 1
+    type: "d6"
+
+  tokens:
+    name: "Chiave d'Oro"
+    quantity: 1
+    behavior: "unique_status"
+
+  deck:
+    name: "Tiri Mancini"
+    total_cards: 20
+    suits: []
+    card_values:
+      - rank: "Bomba Fumogena"
+        effect: "immune"
+      - rank: "Bucce di Banana"
+        effect: "cancel_move"
+      - rank: "Pozione Sprint"
+        effect: "move_plus_2"
+        count: 2
+      - rank: "Gancio"
+        effect: "ignore_trap"
+        count: 2
+      - rank: "Sgambetto"
+        effect: "opp_back_3"
+        count: 2
+      - rank: "Osso"
+        effect: "counter_dog"
+        count: 2
+      - rank: "Scambio"
+        effect: "swap_pos"
+      - rank: "Calamita"
+        effect: "steal_card"
+      - rank: "Vento"
+        effect: "opp_half_move"
+      - rank: "Passaggio"
+        effect: "move_4"
+      - rank: "Chiave Maestra"
+        effect: "pass_gate"
+      - rank: "Pappagallo"
+        effect: "spy"
+      - rank: "Zavorra"
+        effect: "skip_turn_opp"
+      - rank: "Falsari"
+        effect: "draw_2"
+      - rank: "Specchio"
+        effect: "reflect"
+      - rank: "Re Burlone"
+        effect: "all_back_2"
+
+setup:
+  steps:
+    - order: 1
+      action: "place_pawns"
+      location: "1"
+    - order: 2
+      action: "deal_cards"
+      amount: 2
+    - order: 3
+      action: "place_key"
+      location: "15"
+
+gameplay:
+  turn_order: "orario"
+  phases:
+    - name: "Turno Giocatore"
+      steps:
+        - action: "play_card"
+          optional: true
+        - action: "roll_dice"
+        - action: "move_pawn"
+        - action: "resolve_space_effect"
+
+end_game:
+  trigger:
+    condition: "reach_finish"
+    rule: "exact_roll"
+
+victory_conditions:
+  objective:
+    description: "Arrivare esattamente alla casella 30"

@@ -1,0 +1,181 @@
+# ============================================
+# PROFILI AGENTI - CONFIGURAZIONE
+# ============================================
+# Definisce i profili comportamentali degli agenti
+# che possono essere assegnati a player1 e player2
+# ============================================
+
+profiles:
+
+  # ==========================================
+  # PROFILO: AGGRESSIVO
+  # ==========================================
+  aggressive:
+    name: "Aggressivo"
+    description: "Gioca per vincere ogni mano, usa briscole presto"
+    traits:
+      risk_tolerance: 0.9      # 0-1: quanto rischia
+      trump_conservation: 0.2  # 0-1: quanto conserva le briscole
+      memory_strength: 0.7     # 0-1: quanto ricorda le carte giocate
+      bluff_tendency: 0.3      # 0-1: quanto tende a bluffare
+      point_greed: 0.9         # 0-1: quanto cerca punti alti
+      defensive_play: 0.2      # 0-1: quanto gioca in difesa
+    
+    decision_weights:
+      play_high_card: 0.8
+      play_trump: 0.7
+      sacrifice_points: 0.3
+      wait_for_opportunity: 0.2
+
+  # ==========================================
+  # PROFILO: CONSERVATIVO
+  # ==========================================
+  conservative:
+    name: "Conservativo"
+    description: "Risparmia briscole e carichi per momenti cruciali"
+    traits:
+      risk_tolerance: 0.3
+      trump_conservation: 0.9
+      memory_strength: 0.8
+      bluff_tendency: 0.1
+      point_greed: 0.5
+      defensive_play: 0.8
+    
+    decision_weights:
+      play_high_card: 0.3
+      play_trump: 0.2
+      sacrifice_points: 0.7
+      wait_for_opportunity: 0.9
+
+  # ==========================================
+  # PROFILO: BILANCIATO
+  # ==========================================
+  balanced:
+    name: "Bilanciato"
+    description: "Strategia equilibrata, adatta le decisioni al contesto"
+    traits:
+      risk_tolerance: 0.5
+      trump_conservation: 0.5
+      memory_strength: 0.6
+      bluff_tendency: 0.2
+      point_greed: 0.6
+      defensive_play: 0.5
+    
+    decision_weights:
+      play_high_card: 0.5
+      play_trump: 0.4
+      sacrifice_points: 0.5
+      wait_for_opportunity: 0.5
+
+  # ==========================================
+  # PROFILO: RANDOM
+  # ==========================================
+  random:
+    name: "Casuale"
+    description: "Gioca carte a caso, utile come baseline"
+    traits:
+      risk_tolerance: 0.5
+      trump_conservation: 0.5
+      memory_strength: 0.0
+      bluff_tendency: 0.5
+      point_greed: 0.5
+      defensive_play: 0.5
+    
+    decision_weights:
+      play_high_card: 0.5
+      play_trump: 0.5
+      sacrifice_points: 0.5
+      wait_for_opportunity: 0.5
+
+  # ==========================================
+  # PROFILO: ESPERTO
+  # ==========================================
+  expert:
+    name: "Esperto"
+    description: "Memoria perfetta, decisioni ottimali"
+    traits:
+      risk_tolerance: 0.6
+      trump_conservation: 0.7
+      memory_strength: 1.0
+      bluff_tendency: 0.4
+      point_greed: 0.7
+      defensive_play: 0.6
+    
+    decision_weights:
+      play_high_card: 0.6
+      play_trump: 0.5
+      sacrifice_points: 0.4
+      wait_for_opportunity: 0.7
+
+  # ==========================================
+  # PROFILO: OPPORTUNISTA
+  # ==========================================
+  opportunist:
+    name: "Opportunista"
+    description: "Aspetta il momento giusto, poi colpisce forte"
+    traits:
+      risk_tolerance: 0.7
+      trump_conservation: 0.6
+      memory_strength: 0.9
+      bluff_tendency: 0.5
+      point_greed: 0.8
+      defensive_play: 0.4
+    
+    decision_weights:
+      play_high_card: 0.4
+      play_trump: 0.6
+      sacrifice_points: 0.3
+      wait_for_opportunity: 0.8
+
+# ==========================================
+# CONFIGURAZIONE SIMULAZIONE
+# ==========================================
+simulation:
+  default_player1_profile: "balanced"
+  default_player2_profile: "balanced"
+  
+  # Numero di partite per batch di simulazione
+  default_batch_size: 1000
+  
+  # Seed per riproducibilità (null = random)
+  random_seed: null
+  
+  # Logging
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  save_game_logs: true
+  log_directory: "logs"
+
+# ==========================================
+# KPI DA CALCOLARE
+# ==========================================
+kpi_config:
+  
+  balance_metrics:
+    - name: "win_rate"
+      description: "Percentuale vittorie per profilo"
+    - name: "average_score"
+      description: "Punteggio medio per profilo"
+    - name: "score_variance"
+      description: "Varianza del punteggio"
+    - name: "first_player_advantage"
+      description: "Vantaggio del primo giocatore"
+  
+  snowball_metrics:
+    - name: "comeback_rate"
+      description: "% partite ribaltate dopo svantaggio"
+    - name: "lead_retention"
+      description: "% partite vinte mantenendo il vantaggio iniziale"
+    - name: "point_swing"
+      description: "Oscillazione massima del punteggio"
+    - name: "decisive_hand"
+      description: "Mano in cui si decide il 50% delle partite"
+  
+  game_flow_metrics:
+    - name: "average_hands"
+      description: "Numero medio di mani per partita"
+    - name: "trump_usage"
+      description: "Frequenza uso briscole"
+    - name: "blowout_rate"
+      description: "% partite con cappotto (>100 punti)"
+    - name: "close_games"
+      description: "% partite decise per <10 punti"

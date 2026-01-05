@@ -1,0 +1,418 @@
+# ============================================
+# SCHEMA STANDARD REGOLE GIOCO v1.0
+# ============================================
+# Questo schema definisce la struttura ufficiale
+# per la traduzione delle regole di qualsiasi gioco
+# da tavolo, carte o dadi in formato YAML.
+# ============================================
+
+$schema: "game-rules-v1.0"
+$version: "1.0.0"
+$description: "Schema standard per regole giochi da tavolo"
+
+# ============================================
+# DEFINIZIONE CAMPI
+# ============================================
+
+fields:
+
+  # ==========================================
+  # SEZIONE: game (OBBLIGATORIA)
+  # ==========================================
+  game:
+    required: true
+    description: "Informazioni generali sul gioco"
+    properties:
+      name:
+        type: string
+        required: true
+        description: "Nome ufficiale del gioco"
+      type:
+        type: enum
+        required: true
+        values: ["card_game", "board_game", "dice_game", "tile_game", "mixed"]
+        description: "Tipologia principale del gioco"
+      origin:
+        type: string
+        required: false
+        description: "Paese o regione di origine"
+      version:
+        type: string
+        required: true
+        default: "1.0"
+        description: "Versione delle regole"
+      language:
+        type: string
+        required: true
+        description: "Codice lingua ISO 639-1 (es: it, en, de)"
+
+  # ==========================================
+  # SEZIONE: players (OBBLIGATORIA)
+  # ==========================================
+  players:
+    required: true
+    description: "Configurazione giocatori"
+    properties:
+      min:
+        type: integer
+        required: true
+        min_value: 1
+        description: "Numero minimo di giocatori"
+      max:
+        type: integer
+        required: true
+        description: "Numero massimo di giocatori"
+      recommended:
+        type: array[integer]
+        required: false
+        description: "Numeri di giocatori consigliati"
+      team_play:
+        type: boolean
+        required: false
+        default: false
+        description: "Se il gioco supporta squadre"
+      team_configuration:
+        type: array[object]
+        required: false
+        description: "Configurazioni squadre possibili"
+        item_properties:
+          players:
+            type: integer
+            description: "Numero totale giocatori per questa config"
+          teams:
+            type: integer
+            description: "Numero di squadre"
+          players_per_team:
+            type: integer
+            description: "Giocatori per squadra"
+          seating:
+            type: string
+            description: "Disposizione ai posti (alternato, consecutivo)"
+
+  # ==========================================
+  # SEZIONE: duration (CONSIGLIATA)
+  # ==========================================
+  duration:
+    required: false
+    description: "Durata stimata della partita"
+    properties:
+      min_minutes:
+        type: integer
+        description: "Durata minima in minuti"
+      max_minutes:
+        type: integer
+        description: "Durata massima in minuti"
+
+  # ==========================================
+  # SEZIONE: components (OBBLIGATORIA)
+  # ==========================================
+  components:
+    required: true
+    description: "Tutti i componenti fisici del gioco"
+    types:
+      
+      deck:
+        description: "Mazzo di carte"
+        properties:
+          name:
+            type: string
+            required: true
+          total_cards:
+            type: integer
+            required: true
+          suits:
+            type: array[object]
+            properties:
+              id:
+                type: string
+                format: snake_case
+              name:
+                type: string
+              alias:
+                type: string
+                required: false
+          cards_per_suit:
+            type: integer
+          card_values:
+            type: array[object]
+            properties:
+              rank:
+                type: string
+                description: "Nome o numero della carta"
+              points:
+                type: integer
+                description: "Punti della carta"
+              strength:
+                type: integer
+                description: "Forza relativa (1=massima)"
+          total_points:
+            type: integer
+            description: "Somma totale punti nel mazzo"
+      
+      board:
+        description: "Tabellone di gioco"
+        properties:
+          name:
+            type: string
+          dimensions:
+            type: object
+            properties:
+              rows:
+                type: integer
+              columns:
+                type: integer
+          spaces:
+            type: array[object]
+            description: "Definizione caselle"
+      
+      dice:
+        description: "Dadi"
+        properties:
+          quantity:
+            type: integer
+          type:
+            type: enum
+            values: ["d4", "d6", "d8", "d10", "d12", "d20", "custom"]
+          faces:
+            type: array
+            required: false
+            description: "Valori personalizzati sulle facce"
+      
+      tokens:
+        description: "Segnalini e pedine"
+        properties:
+          name:
+            type: string
+          quantity:
+            type: integer
+          types:
+            type: array[object]
+
+  # ==========================================
+  # SEZIONE: setup (OBBLIGATORIA)
+  # ==========================================
+  setup:
+    required: true
+    description: "Preparazione del gioco"
+    properties:
+      description:
+        type: string
+        description: "Descrizione generale della preparazione"
+      steps:
+        type: array[object]
+        required: true
+        item_properties:
+          order:
+            type: integer
+            required: true
+            description: "Ordine di esecuzione (1, 2, 3...)"
+          action:
+            type: string
+            format: snake_case
+            required: true
+            description: "Identificativo azione (es: shuffle_deck)"
+          description:
+            type: string
+            required: true
+            description: "Descrizione leggibile dell'azione"
+          parameters:
+            type: object
+            required: false
+            description: "Parametri specifici dell'azione"
+          note:
+            type: string
+            required: false
+            description: "Note aggiuntive"
+
+  # ==========================================
+  # SEZIONE: gameplay (OBBLIGATORIA)
+  # ==========================================
+  gameplay:
+    required: true
+    description: "Svolgimento del gioco"
+    properties:
+      turn_order:
+        type: enum
+        values: ["orario", "antiorario", "variabile", "simultaneo"]
+        description: "Ordine dei turni"
+      phases:
+        type: array[object]
+        required: true
+        item_properties:
+          name:
+            type: string
+            required: true
+          id:
+            type: string
+            format: snake_case
+            required: true
+          steps:
+            type: array[object]
+            properties:
+              order:
+                type: integer
+              action:
+                type: string
+              player:
+                type: enum
+                values: ["active", "others", "all", "winner", "specific"]
+              description:
+                type: string
+              rules:
+                type: array[string]
+              condition:
+                type: string
+                description: "Condizione per eseguire lo step"
+      
+      trick_winner_rules:
+        type: array[object]
+        required: false
+        description: "Regole per determinare vincitore della mano (giochi di carte)"
+        item_properties:
+          id:
+            type: string
+          condition:
+            type: string
+          winner:
+            type: string
+
+  # ==========================================
+  # SEZIONE: end_game (OBBLIGATORIA)
+  # ==========================================
+  end_game:
+    required: true
+    description: "Condizioni e procedura di fine partita"
+    properties:
+      trigger:
+        type: object
+        required: true
+        properties:
+          condition:
+            type: string
+            description: "Condizione tecnica (es: deck_empty)"
+          description:
+            type: string
+            description: "Descrizione leggibile"
+      final_rounds:
+        type: object
+        required: false
+        description: "Round finali speciali"
+      special_rules:
+        type: array[string]
+        required: false
+      scoring:
+        type: object
+        required: false
+        description: "Come contare i punti finali"
+
+  # ==========================================
+  # SEZIONE: victory_conditions (OBBLIGATORIA)
+  # ==========================================
+  victory_conditions:
+    required: true
+    description: "Condizioni di vittoria"
+    types:
+      points_threshold:
+        description: "Vittoria per punti"
+        properties:
+          threshold:
+            type: integer
+          description:
+            type: string
+      objective:
+        description: "Vittoria per obiettivo"
+        properties:
+          objective:
+            type: string
+          description:
+            type: string
+      elimination:
+        description: "Vittoria per eliminazione avversari"
+      survival:
+        description: "Vittoria per sopravvivenza"
+    
+    special_properties:
+      tie:
+        type: object
+        description: "Gestione pareggio"
+        properties:
+          condition:
+            type: string
+          resolution:
+            type: array[string]
+
+  # ==========================================
+  # SEZIONE: variants (OPZIONALE)
+  # ==========================================
+  variants:
+    required: false
+    description: "Varianti ufficiali del gioco"
+    type: array[object]
+    item_properties:
+      name:
+        type: string
+        required: true
+      players:
+        type: integer
+        required: false
+      teams:
+        type: integer
+        required: false
+      rules:
+        type: array[string]
+        required: true
+        description: "Regole che cambiano rispetto al base"
+
+  # ==========================================
+  # SEZIONE: strategy (OPZIONALE)
+  # ==========================================
+  strategy:
+    required: false
+    description: "Consigli strategici"
+    properties:
+      tips:
+        type: array[object]
+        item_properties:
+          id:
+            type: string
+            format: snake_case
+          category:
+            type: enum
+            values: ["memoria", "cooperazione", "gestione_mano", "efficienza", "osservazione", "bluff", "timing", "altro"]
+          description:
+            type: string
+
+  # ==========================================
+  # SEZIONE: glossary (CONSIGLIATA)
+  # ==========================================
+  glossary:
+    required: false
+    description: "Terminologia specifica del gioco"
+    type: array[object]
+    item_properties:
+      term:
+        type: string
+        required: true
+      definition:
+        type: string
+        required: true
+
+  # ==========================================
+  # SEZIONE: metadata (AUTO-GENERATA)
+  # ==========================================
+  metadata:
+    required: true
+    description: "Metadati del file"
+    auto_generated: true
+    properties:
+      created_at:
+        type: date
+        format: "YYYY-MM-DD"
+      format_version:
+        type: string
+        value: "1.0"
+      source:
+        type: string
+        description: "File sorgente delle regole"
+      author:
+        type: string

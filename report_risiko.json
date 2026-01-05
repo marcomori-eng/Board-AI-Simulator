@@ -1,0 +1,793 @@
+{
+  "timestamp": "2026-01-05T15:43:18.444169",
+  "game": "Risiko",
+  "players": {
+    "p1": "balanced",
+    "p2": "balanced"
+  },
+  "kpis": {
+    "balance": {
+      "player1_win_rate": 0.64,
+      "player2_win_rate": 0.36,
+      "draw_rate": 0.0,
+      "first_player_advantage": 0.28,
+      "balance_score": 0.72
+    },
+    "scoring": {
+      "p1_avg_score": 1.28,
+      "p2_avg_score": 0.72,
+      "avg_diff": 2
+    },
+    "snowball": {
+      "early_lead_win_rate": 0.0,
+      "snowball_index": -0.5
+    },
+    "comebacks": {
+      "comeback_rate": 0.0
+    },
+    "performance": {
+      "total_duration_sec": 0.010409,
+      "avg_game_ms": 0.10409
+    }
+  },
+  "results": [
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    },
+    {
+      "winner": "player1",
+      "p1_score": 2,
+      "p2_score": 0,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 2,
+          "player2": 0
+        }
+      ]
+    },
+    {
+      "winner": "player2",
+      "p1_score": 0,
+      "p2_score": 2,
+      "score_history": [
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 1,
+          "player2": 1
+        },
+        {
+          "player1": 0,
+          "player2": 2
+        }
+      ]
+    }
+  ]
+}
